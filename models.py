@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import pickle
 from sklearn.linear_model import LinearRegression
-print("Hello")
+#print("Hello")
 
 
 # In[2]:
