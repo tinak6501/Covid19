@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>  
+<meta charset="UTF-8">  
+<title>ML API</title>  
+<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>  </head> 
+<body> 
+<div class="login"> 
+<h1>Predict Salary Analysis</h1>      
+<!-- Main Input For Receiving Query to our ML -->    
+<form action="{{ url_for('predict')}}"method="post">
+<input type="text" name="rating" placeholder="Rating" required="required" />
+<input type="text" name="quality" placeholder="Quality" required="required" />
+<input type="text" name="demand_value" placeholder="Demand" required="required" />
+<button type="submit" class="btn btn-primary btn-block btn-large">Price Predictor</button>
+</form>
+<br>   
+<br>   
+{{ prediction_text }}  
+</div>  
+</body>
+</html>
+Step 5
+Configuration Files
+
+First we need to provide a requirements.txt files for the import statements we have used in our python files.
+example file format
+
+Flask==1.1.1 
+gunicorn==19.9.0
+itsdangerous==1.1.0 
+Jinja2==2.10.1 
+MarkupSafe==1.1.1 
+Werkzeug==0.15.5 
+numpy>=1.9.2 
+scipy>=0.15.1 
+scikit-learn>=0.18 
+matplotlib>=1.4.3 
+pandas>=0.19
+2. We need to add one Procfile in our Project
+
+web: gunicorn app:app
+first app is for file name for entry point to the application.
+
+second app is the Application name which we named at the time of creation of Flask app.
+
+example: app = Falsk(__name__)
+
+Upload all the files with the required Structure into the github repository.
+
+Step 6
+Now create an account in Heroku. After Login you will reach in a Similar Screen like below.
+
+
+Click on New.
+
+Fill the Name of your app in Lower case.
+
+Left other sections as it is.
+
+You will reach in this screen.
+
+
+Connect your Github repository for the project.
+
+Now there are 2 options Automatic Deploy and Manual Deploy.
+
+If you select Automatic deploys, every time you merge your code in mentioned branch then Heroku will deploy your app once and within few minutes (5–10 mins) the changes will be reflected in your live server.
+
+If you select Manual deploy, then after merging your code in the mentioned branch you have to Manually deploy your app in cloud by clicking Deploy Branch button.
+
+
+I recommend for the first time you select manual deployment and check the logs.
+
+After building the package of your application when the deployment has been done then link will be generated for your application to run in live server.
+
+This is it. Hit the URL generated from the Deployment logs.
+
+HOLA !!!!!!!!!!!!!!!!!
+
+Your application is up and running. Put the values of your choice and your model will be ready to predict the value.
+
+** Note : You don’t need to push your models.py code into Github. Every time you change your model, generate the models.pkl file and push the updated one into github.
+
