@@ -41,7 +41,7 @@ regressor.fit(X, Y)
 # In[4]:
 
 
-#pickle.dump(regressor, open('model.pkl','wb'))
+pickle.dump(regressor, open('model.pkl','wb'))
 
 
 # In[ ]:
