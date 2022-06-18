@@ -22,8 +22,7 @@ def predict():
    final_features=[np.array(int_features)]
    prediction = model.predict(final_features)     
    output = round(prediction[0], 2)
-   return render_template('page.html', prediction_text='Price of the
-                          Product should be $ {}'.format(output))
+   return render_template('page.html', prediction_text='Price of the Product should be $ {}'.format(output))
 if __name__ == "__main__":    
    app.run(debug=True)
 
