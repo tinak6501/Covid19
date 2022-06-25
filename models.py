@@ -45,7 +45,7 @@ from sktime.utils.plotting import plot_series
 import pandas as pd
 
 #create dataset
-df=pd.read_csv('/Users/kasturid3/Desktop/vaccines_by_age.csv',parse_dates=['Date'])    
+df=pd.read_csv('vaccinations-by-age-group.csv',parse_dates=['Date'])    
 df=df[['Date','Agegroup','At least one dose_cumulative']]
 df=df[df['Date']>'2021-06-01'].reset_index(drop=True)
 df1=df.pivot_table(index=['Date'],columns='Agegroup',values=['At least one dose_cumulative']).reset_index()
