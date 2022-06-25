@@ -99,7 +99,7 @@ forecaster.fit(y=y_train)
 # In[4]:
 
 
-pickle.dump(forecaster, open('model.pkl','wb'))
+#pickle.dump(forecaster, open('model.pkl','wb'))
 
 
 # In[ ]:
