@@ -7,7 +7,7 @@ model = pickle.load(open('model.pkl', 'rb'))
 @app.route('/')
 def home():    
     return render_template('page.html') 
-@app.route('/predict',methods=['POST'])
+@app.route('/predict',methods=['GET'])
 def predict(): 
     
     prediction = model.predict(fh=fh)     
