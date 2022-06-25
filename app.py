@@ -6,19 +6,12 @@ app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb')) 
 @app.route('/')
 def home():    
-   return render_template('page.html') 
+    return render_template('page.html') 
 @app.route('/predict',methods=['POST'])
-def predict():    
-   '''    
-    For rendering results on HTML GUI    
-   '''    
-   int_features = [int(x) for x in request.form.values()]
-   final_features=[np.array(int_features)]
-   prediction = model.predict(final_features)     
-   output = round(prediction[0], 2)
-   return render_template('page.html', prediction_text='Price of the Product should be $ {}'.format(output))
+def predict(): 
+    
+    prediction = model.predict(fh=fh)     
+    output = round(prediction)
+    return render_template('page.html', prediction_text='Number of vaccines that will be requiered'.format(output))
 if __name__ == "__main__":    
-   app.run(debug=True)
-
-
-
+    app.run(debug=True)
