@@ -11,7 +11,7 @@ matplotlib>=1.4.3
 pandas>=0.19
 sktime==0.12.0
 Prophet>=0.11.4
-ForecastingHorizon==stable
+ForecastingHorizon>=0.12.0
 mean_absolute_percentage_error>=0.11.4
 temporal_train_test_split>=0.11.4
 MinMaxScaler>=0.11.4
