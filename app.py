@@ -1,5 +1,6 @@
 #Step 3
 import numpy as np
+from sktime.forecasting.compose import ForecastingPipeline
 from flask import Flask, request, jsonify, render_template
 import pickle 
 app = Flask(__name__)
