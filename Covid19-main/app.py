@@ -26,10 +26,7 @@ def predict():
     df=pd.read_csv('/Users/kasturid3/Desktop/vaccines_by_age.csv',parse_dates=['Date'])
 
 
-    # In[32]:
-
-
-    df
+   
 
 
     # In[33]:
@@ -63,10 +60,7 @@ def predict():
            '50-59yrs', '60-69yrs', '70-79yrs', '80','Adults_18plus', 'Ontario_12plus']]
 
 
-    # In[38]:
-
-
-    df2
+    
 
 
     # In[39]:
@@ -99,11 +93,6 @@ def predict():
     train=df2['12-17yrs'][:280]
     test=df2['12-17yrs'][280:]
 
-
-    # In[44]:
-
-
-    
 
 
     # In[28]:
