@@ -103,7 +103,7 @@ def predict():
     # In[44]:
 
 
-    test
+    
 
 
     # In[28]:
@@ -121,7 +121,7 @@ def predict():
     pred_text=''
     for i in output:
         pred_text+= str(i)+'\n'
-    pred_text+= ''
+        pred_text+= ''
     return render_template('page.html', prediction_text=pred_text)
 if __name__ == "__main__":    
     app.run(debug=True)
