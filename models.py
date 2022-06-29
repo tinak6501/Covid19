@@ -36,9 +36,6 @@ df2.index=df2.index.to_period("D")
 y = pd.Series(df2['12-17yrs'])
 
 
-# In[80]:
-
-
 train=df2['12-17yrs'][:280]
 test=df2['12-17yrs'][280:]
 
@@ -61,15 +58,12 @@ regressor.fit(df3[:280])
 
 
 
-future = regressor.make_future_dataframe(periods=len(df3[280:]))
-
-
-
 
 
 pickle.dump(regressor, open('model.pkl','wb'))
 
 
 model = pickle.load(open('model.pkl','rb'))
+future = model.make_future_dataframe(periods=len(df3[280:]))
 preds=model.predict(future)
 print(preds[['y_hat']])
