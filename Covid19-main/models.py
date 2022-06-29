@@ -20,7 +20,7 @@ from statsmodels.tsa.arima_model import ARIMA
 # In[46]:
 
 
-df=pd.read_csv('/Users/kasturid3/Desktop/vaccines_by_age.csv',parse_dates=['Date'])
+df=pd.read_csv('Covid19-main/vaccines_by_age.csv',parse_dates=['Date'])
 
 
 # In[47]:
