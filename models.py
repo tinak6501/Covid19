@@ -9,7 +9,7 @@ import pickle
 
 from prophet import Prophet
 
-df=pd.read_csv('/Users/kasturid3/Desktop/vaccines_by_age.csv',parse_dates=['Date'])
+df=pd.read_csv('vaccines_by_age.csv',parse_dates=['Date'])
 
 
 df=df[['Date','Agegroup','At least one dose_cumulative']]
