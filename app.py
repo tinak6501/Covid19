@@ -1,7 +1,4 @@
-import numpy as np
-   '''    
-    For rendering results on HTML GUI    
-   '''    
+import numpy as np  
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -10,14 +7,17 @@ import pickle
 from prophet import Prophet
 from flask import Flask, request, jsonify, render_template
 import pickle 
+
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb')) 
+
 @app.route('/')
-def home():    
+def home():
    return render_template('index.html') 
+
 @app.route('/predict',methods=['POST'])
 def predict():    
-
+   
    df=pd.read_csv('/Users/kasturid3/Desktop/vaccines_by_age.csv',parse_dates=['Date'])
 
 
