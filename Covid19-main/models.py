@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[61]:
+
 
 
 import pandas as pd
@@ -54,13 +54,6 @@ df2=df1[['Date','12-17yrs', '18-29yrs', '30-39yrs', '40-49yrs',
        '50-59yrs', '60-69yrs', '70-79yrs', '80','Adults_18plus', 'Ontario_12plus']]
 
 
-# In[52]:
-
-
-df2
-
-
-# In[53]:
 
 
 df2=df2.set_index('Date')
@@ -72,34 +65,15 @@ df2=df2.set_index('Date')
 df2.index = pd.to_datetime(df2.index)
 
 
-# In[55]:
-
 
 df2.index=df2.index.to_period("D")
 
 
-# In[56]:
-
 
 y = pd.Series(df2['12-17yrs'])
 
-
-# In[57]:
-
-
 train=df2['12-17yrs'][:280]
 test=df2['12-17yrs'][280:]
-
-
-# In[58]:
-
-
-test
-
-
-# In[59]:
-
-
 
 
 # 1,1,2 ARIMA Model
