@@ -63,7 +63,7 @@ m.fit(df3[:280])
 
 
 
-#future = m.make_future_dataframe(periods=len(df3[280:]))
+future = m.make_future_dataframe(periods=len(df3[280:]))
 
 
 
@@ -75,4 +75,10 @@ m.fit(df3[:280])
 
 
 #preds
+# Saving model to disk
+pickle.dump(regressor, open('model.pkl','wb'))
 
+# Loading model to compare the results
+model = pickle.load(open('model.pkl','rb'))
+preds=model.predict(future)
+print(preds[['y_hat']])
