@@ -19,3 +19,4 @@ def predict():
    return render_template('page.html', prediction_text=str(output))
 if __name__ == "__main__":    
    app.run(debug=True)
+  
