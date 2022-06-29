@@ -17,9 +17,9 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict(): 
    
-   int_features = [int(x) for x in request.form.values()]
-   final_features = [np.array(int_features)]
-   prediction = model.predict(final_features)
+   future = model.make_future_dataframe(periods=len(df3[280:]))
+   forecast =model.predict(future)
+   preds=forecast[['yhat']]
    
    
    output = round(prediction)
