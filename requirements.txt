@@ -9,4 +9,4 @@ scipy>=0.15.1
 matplotlib>=1.4.3 
 pandas>=0.19
 prophet>=1.0
-
+fbprophet<= 0.6
