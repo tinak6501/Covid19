@@ -7,7 +7,7 @@ import pandas as pd
 import pickle 
 
 
-from prophet import Prophet
+from fbprophet import Prophet
 
 df=pd.read_csv('vaccines_by_age.csv',parse_dates=['Date'])
 
