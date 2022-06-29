@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
 
 import pandas as pd
 import pandas as pd
@@ -67,18 +65,11 @@ future = regressor.make_future_dataframe(periods=len(df3[280:]))
 
 
 
-#forecast = regressor.predict(future)
-#preds=forecast[['yhat']]
 
 
-# In[117]:
-
-
-#preds
-# Saving model to disk
 pickle.dump(regressor, open('model.pkl','wb'))
 
-# Loading model to compare the results
+
 model = pickle.load(open('model.pkl','rb'))
 preds=model.predict(future)
 print(preds[['y_hat']])
