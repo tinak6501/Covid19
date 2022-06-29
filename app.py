@@ -16,7 +16,7 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict(): 
-   
+   df3= pd.read_csv('/df3.csv')
    future = model.make_future_dataframe(periods=len(df3[280:]))
    forecast =model.predict(future)
    preds=forecast[['yhat']]
