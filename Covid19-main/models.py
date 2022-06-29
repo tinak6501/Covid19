@@ -111,17 +111,10 @@ model=model.fit()
 # In[60]:
 
 
-pred
+#pred
 
 
-# In[22]:
 
-
-rmse = np.mean((y_pred - y_test)**2)**.5  # RMSE
-rmse
-
-
-# In[ ]:
 
 
 
