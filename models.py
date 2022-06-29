@@ -75,4 +75,4 @@ test=df2['12-17yrs'][280:]
 # 1,1,2 ARIMA Model
 model = ARIMA(train, order=(1,1,2))
 model=model.fit()
-#prediction=model.predict(start=1, end=24, exog=None, dynamic=False)
+#prediction=model.predict(start=1, end=24, exog=None, dynamic=False) 
