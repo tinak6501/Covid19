@@ -13,7 +13,6 @@ model = pickle.load(open('model.pkl', 'rb'))
 @app.route('/')
 def home():
    return render_template('index.html') 
-
 @app.route('/predict',methods=['POST'])
 def predict(): 
    df3= pd.read_csv('/df3.csv')
