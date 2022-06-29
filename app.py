@@ -15,13 +15,13 @@ def home():
    return render_template('index.html') 
 @app.route('/predict',methods=['POST'])
 def predict(): 
-   df3= pd.read_csv('/df3.csv')
+   df3= pd.read_csv('df3.csv')
    future = model.make_future_dataframe(periods=len(df3[280:]))
    forecast =model.predict(future)
    preds=forecast[['yhat']]
    
    
-   output = round(prediction)
+   output = round(preds)
    return render_template('index.html', prediction_text=output)
 
 if __name__ == "__main__":    
