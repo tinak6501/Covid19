@@ -7,8 +7,14 @@ import pandas as pd
 import pickle 
 import stan
 
-from prophet import Prophet
 
+from fbprophet import Prophet
+import logging
+logger = logging.getLogger('fbprophet')
+logger.setLevel(logging.DEBUG)
+
+m = Prophet()
+print(m.stan_backend)
 df=pd.read_csv('vaccines_by_age.csv',parse_dates=['Date'])
 
 
