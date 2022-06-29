@@ -65,7 +65,7 @@ def predict():
    forecast = m.predict(future)
    prediction=forecast[['yhat']]   
    output = round(prediction)
-   return render_template('page.html', prediction_text=str(output))
+   return render_template('index.html', prediction_text=output)
 
 if __name__ == "__main__":    
    app.run(debug=True)
