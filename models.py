@@ -58,16 +58,16 @@ df3.reset_index(inplace=True)
 df3['ds'] = df3['ds'].dt.to_timestamp('s').dt.strftime('%Y-%m-%d')
 
 
-m = Prophet()
-m.fit(df3[:280])
+regressor = Prophet()
+regressor.fit(df3[:280])
 
 
 
-future = m.make_future_dataframe(periods=len(df3[280:]))
+future = regressor.make_future_dataframe(periods=len(df3[280:]))
 
 
 
-#forecast = m.predict(future)
+#forecast = regressor.predict(future)
 #preds=forecast[['yhat']]
 
 
