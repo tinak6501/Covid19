@@ -12,7 +12,9 @@ def predict():
     For rendering results on HTML GUI    
    '''    
    
-   prediction=model.predict(start=1, end=24, exog=None, dynamic=False)   
+   future = m.make_future_dataframe(periods=len(df3[280:]))
+   forecast = m.predict(future)
+   prediction=forecast[['yhat']]   
    output = round(prediction)
    return render_template('page.html', prediction_text=str(output))
 if __name__ == "__main__":    
